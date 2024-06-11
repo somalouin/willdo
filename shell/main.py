@@ -9,7 +9,6 @@ style = Style.from_dict({
   'output': 'ansiyellow italic'
 })
 
-# Create a PromptSession
 session = PromptSession()
 
 def main():
@@ -20,7 +19,11 @@ def main():
       if text == 'exit': # exit
           break
       if text == 'ls':  # ls
-          list_files()
+          ls()
+          continue
+      if text.startswith('cat'): # cat
+          file = text.split(' ')[1]
+          cat(file)
           continue
       print(f'You entered: {text}')
     except KeyboardInterrupt: # ctrl+c
