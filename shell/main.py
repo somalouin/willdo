@@ -15,7 +15,7 @@ def main():
   set_title("m-shell") 
   while True:
     try:
-      text = session.prompt('[*] > ', style=style)
+      text = session.prompt(f'{os.getcwd()} > ', style=style)
       if text == 'exit': # exit
           break
       if text == 'ls':  # ls
