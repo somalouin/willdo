@@ -8,3 +8,6 @@ def ls():
 def cat(file):
   with open(file, 'r') as f:
     print(f.read())
+
+def cd(path):
+  os.chdir(path)

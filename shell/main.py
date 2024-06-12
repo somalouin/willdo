@@ -24,6 +24,9 @@ def main():
       if text.startswith('cat'): # cat
           file = text.split(' ')[1]
           cat(file)
+      if text.startswith('cd'):
+          path = text.split(' ')[1]
+          cd(path)
           continue
       print(f'You entered: {text}')
     except KeyboardInterrupt: # ctrl+c
