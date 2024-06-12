@@ -28,7 +28,6 @@ def main():
           path = text.split(' ')[1]
           cd(path)
           continue
-      print(f'You entered: {text}')
     except KeyboardInterrupt: # ctrl+c
       continue  
     except EOFError: # ctrl+d
