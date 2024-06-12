@@ -5,9 +5,16 @@ def ls():
   for file in files:
     print(f"- {file}")
 
-def cat(file):
-  with open(file, 'r') as f:
-    print(f.read())
+def cat(path):
+    try:
+        with open(path, 'r') as file:
+            print(file.read())
+    except FileNotFoundError:
+        print(f'File not found: {path}')
+    except PermissionError:
+        print(f'Permission denied: {path}')
+    except IsADirectoryError:
+        print(f'{path} is a directory')
 
 def cd(new_dir):
     try:
