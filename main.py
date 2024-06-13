@@ -1,7 +1,7 @@
 from prompt_toolkit import PromptSession
 from prompt_toolkit.styles import Style
 from prompt_toolkit.shortcuts import set_title
-from commands import *
+import os
 
 style = Style.from_dict({
   'prompt': 'ansigreen bold',
@@ -18,16 +18,6 @@ def main():
       text = session.prompt(f'{os.getcwd()} > ', style=style)
       if text == 'exit': # exit
           break
-      if text == 'ls':  # ls
-          ls()
-          continue
-      if text.startswith('cat'): # cat
-          file = text.split(' ')[1]
-          cat(file)
-      if text.startswith('cd'):
-          path = text.split(' ')[1]
-          cd(path)
-          continue
     except KeyboardInterrupt: # ctrl+c
       continue  
     except EOFError: # ctrl+d
