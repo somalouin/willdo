@@ -4,9 +4,7 @@ from prompt_toolkit.shortcuts import set_title
 import os
 
 style = Style.from_dict({
-  'prompt': 'ansigreen bold',
-  'input': 'ansiblue',
-  'output': 'ansiyellow italic'
+  'prompt': 'ansigreen bold'
 })
 
 session = PromptSession()
