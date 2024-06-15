@@ -1,25 +1,22 @@
-from prompt_toolkit import PromptSession
-from prompt_toolkit.styles import Style
-from prompt_toolkit.shortcuts import set_title
-import os
+import time
+from blessed import Terminal
 
-style = Style.from_dict({
-  'prompt': 'ansigreen bold'
-})
+term = Terminal()
 
-session = PromptSession()
+def display_custom_message():
+    with term.cbreak(), term.hidden_cursor():
+        print(term.clear)
+        print(term.yellow('=================='))
+        print(term.bold_red_on_black('welcome to m-shell'))
+        print(term.yellow('=================='))
+        for i in range(5, 0, -1):
+            print(term.move_xy(0, 4) + term.cyan(f'{i}'), end='', flush=True)
+            time.sleep(1)
+        print(term.move_xy(0, 4) + term.clear_eol)
+        print(term.magenta('bye bye'))
 
 def main():
-  set_title("m-shell") 
-  while True:
-    try:
-      text = session.prompt(f'{os.getcwd()} > ', style=style)
-      if text == 'exit': # exit
-          break
-    except KeyboardInterrupt: # ctrl+c
-      continue  
-    except EOFError: # ctrl+d
-      break
+  display_custom_message()
 
 if __name__ == '__main__':
   main()
