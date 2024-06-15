@@ -6,6 +6,6 @@ setup(
     packages=find_packages(),
     author='Serge-Olivier Malouin',
     install_requires=[
-        'prompt_toolkit',
+        'blessed',
     ]
 )
