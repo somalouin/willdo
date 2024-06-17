@@ -8,8 +8,8 @@ def extract_todo_comments(file_path):
 
 def display_todo_comments(todo_comments):
   if not todo_comments:
-    print("No TODO comments found.")
+    print("> No TODO in file")
     return
-  print("TODO comments found:")
+  print("> TODO comments found:")
   for line_number, comment in todo_comments:
     print(f"Line {line_number}: {comment}")
