@@ -9,7 +9,7 @@ def main():
   else:
       name = "World"
   print(f"Hello, {name}!")
-  comments = extract_todo_comments("m-shell/__main__.py")
+  comments = extract_todo_comments("test/test_todo.py")
   display_todo_comments(comments)
 
 if __name__ == "__main__":
