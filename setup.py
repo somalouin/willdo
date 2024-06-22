@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='m-shell',
+    name='willdo',
     version='0.1',
     packages=find_packages(),
     author='Serge-Olivier Malouin',
@@ -10,7 +10,8 @@ setup(
     ],
     entry_points={
         'console_scripts': [
-            'm-shell = m-shell.__main__:main'
+            'willdo = willdo.__main__:main'
         ]
     }
+
 )
