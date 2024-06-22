@@ -7,8 +7,8 @@ def main():
   if len(sys.argv) > 1:
       name = sys.argv[1]
   else:
-      name = "World"
-  print(f"Hello, {name}!")
+      print("No file name provided")
+  print(f"Reading file: {name}")
   comments = extract_todo_comments("test/test_todo.py")
   display_todo_comments(comments)
 
