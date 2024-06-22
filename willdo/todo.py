@@ -13,3 +13,4 @@ def display_todo_comments(todo_comments):
   print("> TODO comments found:")
   for line_number, comment in todo_comments:
     print(f"Line {line_number}: {comment}")
+  print("\n")
