@@ -8,7 +8,7 @@ def main():
       name = sys.argv[1]
       print(f"Reading file: {name}")
   else:
-      print("No file name provided")
+      print("> No file name provided \n")
   
   comments = extract_todo_comments("test/test_todo.py")
   display_todo_comments(comments)
