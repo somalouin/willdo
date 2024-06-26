@@ -6,11 +6,12 @@ def extract_todo_comments(file_path):
         todo_comments.append((line_number, line.strip()))
   return todo_comments
 
-def display_todo_comments(todo_comments):
+def display_todo_comments(todo_comments, path):
   if not todo_comments:
     print("> No TODO in file")
     return
-  print("> TODO comments found:")
+  print(f"> TODO list for {path}")
   for line_number, comment in todo_comments:
-    print(f"Line {line_number}: {comment}")
+    print(f"--> {comment.split('-')[1].strip()} (line {line_number})")
+
   print("\n")

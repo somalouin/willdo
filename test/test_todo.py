@@ -9,5 +9,6 @@ def test_todo():
   # test comment
   # test comment
   # TODO - ddd
+  # TODO - eee
 
   assert len(extract_todo_comments("test/test_todo.py")) == 4
