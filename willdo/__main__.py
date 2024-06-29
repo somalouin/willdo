@@ -2,24 +2,15 @@
 
 import sys
 import os
-from features import execute
+from features import list
 
 def main():
   if len(sys.argv) > 1:
-    parameter = sys.argv[1]
-    path = sys.argv[2]
-    # check for parameter
-    if parameter != "-t":
-      print("> Invalid parameter")
-      sys.exit(1)
-    # check for file
-    if not os.path.isfile(path):
-      print(f"Error: {path} is not a valid file")
-      sys.exit(1)
+    if sys.argv[1] == "list":
+      list()
   else:
-    print("> No file name provided \n")
+    print("[*] Missing argument \n")
     sys.exit(1)
-  execute(parameter, path)
 
 if __name__ == "__main__":
   main()
