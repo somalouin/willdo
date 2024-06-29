@@ -1,6 +1,6 @@
 from willdo.todo import extract_todo_comments
 
-def test_todo():
+def test_extract_todo_comments():
   # TODO - aaa
   # test comment
   # TODO - bbb
