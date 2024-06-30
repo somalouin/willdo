@@ -6,7 +6,8 @@ setup(
     packages=find_packages(),
     author='Serge-Olivier Malouin',
     install_requires=[
-      'pytest'
+      'pytest',
+      'pylint'
     ],
     entry_points={
         'console_scripts': [
