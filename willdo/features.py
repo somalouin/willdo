@@ -1,4 +1,4 @@
-from todo import *
+from willdo.todolist import *
 
 def list():
   todo_comments = search_file()
