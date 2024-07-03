@@ -2,12 +2,14 @@
 
 import sys
 import os
-from features import list
+from features import list, export
 
 def main():
   if len(sys.argv) > 1:
     if sys.argv[1] == "list":
       list()
+    elif sys.argv[1] == "export":
+      export()
   else:
     print("[*] Missing argument \n")
     sys.exit(1)
