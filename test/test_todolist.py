@@ -1,4 +1,4 @@
-from willdo.todolist import *
+from willdo.todo import *
 def test_extract_todo_comments():
   # TODO: aaa
   # TODO: bbb
