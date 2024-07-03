@@ -23,3 +23,11 @@ create a todolist from code comments
 ```py
 python3 willdo list test/test_todo.py
 ```
+
+### export
+- with a file path
+- without a file path (whole project)
+export a todolist from code comments as markdown
+```py
+python3 willdo export
+```
