@@ -1,9 +1,8 @@
 from willdo.todo import *
 
 def list():
-  todo_comments = search_file()
-  display_todo_comments(todo_comments)
+  display_todos(process_files())
+  
 
 def export():
-  todo_comments = search_file()
-  export_to_markdown(todo_comments)
+  export_to_markdown(process_files())
