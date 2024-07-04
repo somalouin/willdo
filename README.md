@@ -28,12 +28,12 @@ python3 willdo list
 ```
 
 ### export
+export a todolist from code comments as markdown
 - with a file path
 ```py
 python3 willdo export test/test_todo.py
 ```
 - without a file path (whole project)
-export a todolist from code comments as markdown
 ```py
 python3 willdo export
 ```
