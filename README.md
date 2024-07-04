@@ -19,13 +19,19 @@ python3 -m pytest test
 ### list 
 create a todolist from code comments
 - with a file path
-- without a file path (whole project)
 ```py
 python3 willdo list test/test_todo.py
+```
+- without a file path (whole project)
+```py
+python3 willdo list
 ```
 
 ### export
 - with a file path
+```py
+python3 willdo export test/test_todo.py
+```
 - without a file path (whole project)
 export a todolist from code comments as markdown
 ```py
