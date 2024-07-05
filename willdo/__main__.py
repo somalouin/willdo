@@ -11,7 +11,10 @@ def main():
       else:
         list()
     elif sys.argv[1] == "export":
-      export()
+      if len(sys.argv) > 2 and sys.argv[2].endswith('.py'):
+        export(sys.argv[2])
+      else:
+        export()
   else:
     print("[*] Missing argument \n")
     sys.exit(1)
