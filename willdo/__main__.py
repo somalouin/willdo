@@ -2,19 +2,14 @@
 
 import sys
 from features import list, export
+from utils.input import handle_params
 
 def main():
   if len(sys.argv) > 1:
     if sys.argv[1] == "list":
-      if len(sys.argv) > 2 and sys.argv[2].endswith('.py'):
-        list(sys.argv[2])
-      else:
-        list()
+      handle_params(sys.argv, list)
     elif sys.argv[1] == "export":
-      if len(sys.argv) > 2 and sys.argv[2].endswith('.py'):
-        export(sys.argv[2])
-      else:
-        export()
+      handle_params(sys.argv, export)
   else:
     print("[*] Missing argument \n")
     sys.exit(1)
