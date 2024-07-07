@@ -1,8 +1,6 @@
 import re
 import os
 
-ROOT_DIR = os.path.abspath(os.curdir)
-
 def extract_todos(file_path):
   todos = []
   with open(file_path, 'r') as file:
@@ -11,12 +9,11 @@ def extract_todos(file_path):
         todos.append((line_number, line.strip(), file_path))
   return todos
 
-def process_files(path=None):
+def process_files(path):
   all_todos = []
-  if path and os.path.isfile(path):
+  if os.path.isfile(path):
     all_todos.extend(extract_todos(path))
-  else:
-    path = ROOT_DIR
+  elif os.path.isdir(path):
     for root, _, files in os.walk(path):
       for file in files:
         if file.endswith('.py'):

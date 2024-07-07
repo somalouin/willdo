@@ -1,5 +1,5 @@
 def handle_params(params, function):
-  if len(params) > 2 and params[2].endswith('.py'):
+  if len(params) > 2:
     function(params[2])
   else:
     function()

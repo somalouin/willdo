@@ -1,14 +1,15 @@
 from willdo.todo import *
 
+ROOT_DIR = os.path.abspath(os.curdir)
+
 def list(path=None):
-  if path and os.path.isfile(path):
+  if path:
     display_todos(process_files(path))
   else:
-    display_todos(process_files())
+    display_todos(process_files(ROOT_DIR))
   
-
 def export(path=None):
-  if path and os.path.isfile(path):
+  if path:
     export_to_markdown(process_files(path))
   else:
-    export_to_markdown(process_files())
+    export_to_markdown(process_files(ROOT_DIR))
