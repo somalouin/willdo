@@ -18,7 +18,7 @@ python3 -m pytest test
 
 ### list 
 create a todolist from code comments
-- with a file path
+- with a file or directory path
 ```py
 python3 willdo list test/test_todo.py
 ```
@@ -29,7 +29,7 @@ python3 willdo list
 
 ### export
 export a todolist from code comments as markdown
-- with a file path
+- with a file or directory path
 ```py
 python3 willdo export test/test_todo.py
 ```
