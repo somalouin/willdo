@@ -7,7 +7,8 @@ setup(
     author='Serge-Olivier Malouin',
     install_requires=[
       'pytest',
-      'pylint'
+      'pylint',
+      'pyfiglet',
     ],
     entry_points={
         'console_scripts': [
