@@ -22,14 +22,14 @@ def process_files(path):
   return all_todos
 
 def display_todos(todos):
+  print("TODO List:")
   for line_number, todo, file_path in todos:
     print(f"-> {todo.split('TODO:')[1].strip()} (line {line_number}) in {file_path.split('/')[-1]}")
   print()
 
 def export_to_markdown(todos):
+  print("Exporting TODOs to todolist.md")
   with open("todolist.md", "w") as file:
     file.write("# TODO List\n")
     for line_number, todo, file_path in todos:
       file.write(f"- [ ] {todo.split('TODO:')[1].strip()} (line {line_number}) in {file_path.split('/')[-1]}\n")
-    file.write("\n")
-      
