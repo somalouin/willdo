@@ -9,6 +9,8 @@ setup(
       'pytest',
       'pylint',
       'pyfiglet',
+      "notion-client",
+      "python-dotenv"
     ],
     entry_points={
         'console_scripts': [
