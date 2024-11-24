@@ -1,5 +1,10 @@
 import re
 import os
+from notion_client import Client
+from dotenv import load_dotenv
+
+load_dotenv()
+notion_api_key = os.getenv("NOTION_API_KEY")
 
 def extract_todos(file_path):
   todos = []
@@ -29,7 +34,29 @@ def display_todos(todos):
 
 def export_to_markdown(todos):
   print("Exporting TODOs to todolist.md")
+  
   with open("todolist.md", "w") as file:
     file.write("# TODO List\n")
     for line_number, todo, file_path in todos:
       file.write(f"- [ ] {todo.split('TODO:')[1].strip()} (line {line_number}) in {file_path.split('/')[-1]}\n")
+
+def export_to_notion(todos):
+  notion = Client(auth=notion_api_key)
+  blocks = [
+    {
+      "object": "block",
+      "type": "to_do",
+      "to_do": {
+        "text": [
+            {
+              "type": "text",
+              "text": {"content": f"{todo.split('TODO:')[1].strip()} (line {line_number}) in {file_path.split('/')[-1]}"},
+            }
+        ],
+        "checked": False,
+      },
+    }
+    for line_number, todo, file_path in todos
+  ]
+  notion.blocks.children.append(block_id=os.getenv("NOTION_PAGE_ID"), children=blocks)
+  print("Checklist added successfully!")
